@@ -19,13 +19,23 @@ const { title } = Astro.props
 		<title>{title}</title>
 	</head>
 	<body
-		class="flex min-h-screen items-center justify-center bg-gradient-to-r from-teal-800 to-gray-300 font-sans text-white"
+		class="flex min-h-screen max-w-[100vw] items-center justify-center overflow-hidden bg-black font-sans text-white"
 	>
 		<slot />
 		<Script />
 	</body>
 </html>
 <style is:global>
-	body {
+	body::before {
+		position: absolute;
+		z-index: -1;
+		content: '';
+		top: 0%;
+		bottom: 10%;
+		width: 150%;
+		left: -25%;
+		background: linear-gradient(260deg, #3245ff 0%, #bc52ee 100%);
+		-webkit-mask-image: radial-gradient(rgba(0, 0, 0, 0.45), transparent 70%);
+		mask-image: radial-gradient(rgba(0, 0, 0, 0.45), transparent 70%);
 	}
 </style>
