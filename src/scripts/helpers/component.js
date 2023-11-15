@@ -1,11 +1,7 @@
 import { each } from 'lodash'
 import { gsap } from 'gsap'
 
-import EventEmitter from 'events'
-
 export default function component({ elm, elms }) {
-	const eventEmitter = new EventEmitter()
-
 	let selector = elm
 	let selectorChildren = {
 		...elms,
@@ -44,6 +40,5 @@ export default function component({ elm, elms }) {
 	return {
 		element,
 		elements,
-		eventEmitter,
 	}
 }

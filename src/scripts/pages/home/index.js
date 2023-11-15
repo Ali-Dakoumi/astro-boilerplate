@@ -3,17 +3,20 @@ import { gsap } from 'gsap'
 import page from '../../helpers/page'
 
 export default function home() {
-	const pageObject = page({})
+	const pageObject = page({
+		id: 'home',
+		elm: '.home',
+	})
 
-	const show = () => {
+	const show = ({ pageElement }) => {
 		return new Promise(resolve => {
-			resolve()
+			gsap.from(pageElement, { autoAlpha: 0, onComplete: () => resolve() })
 		})
 	}
 
-	const hide = () => {
+	const hide = ({ pageElement }) => {
 		return new Promise(resolve => {
-			resolve()
+			gsap.to(pageElement, { autoAlpha: 0, onComplete: () => resolve() })
 		})
 	}
 

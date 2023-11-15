@@ -2,10 +2,10 @@ import { gsap } from 'gsap'
 
 import page from '../../helpers/page'
 
-export default function about() {
+export default function contact() {
 	const pageObject = page({
-		id: 'about',
-		elm: '.about',
+		id: 'contact',
+		elm: '.contact',
 	})
 
 	const show = ({ pageElement }) => {

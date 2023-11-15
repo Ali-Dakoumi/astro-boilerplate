@@ -12,12 +12,16 @@
 	"dependencies": {
 		"@astrojs/check": "^0.3.1",
 		"@astrojs/tailwind": "^5.0.2",
+		"@prismicio/client": "^7.3.1",
+		"@prismicio/helpers": "^2.3.9",
 		"astro": "^3.5.2",
 		"eslint-config-prettier": "^9.0.0",
 		"eslint-plugin-prettier": "^5.0.0",
 		"gsap": "^3.12.2",
 		"loadash": "^1.0.0",
 		"locomotive-scroll": "^5.0.0-beta.8",
+		"lodash": "^4.17.21",
+		"prismic-dom": "^2.2.7",
 		"split-type": "^0.3.3",
 		"tailwindcss": "^3.3.5",
 		"typescript": "^5.2.2"
