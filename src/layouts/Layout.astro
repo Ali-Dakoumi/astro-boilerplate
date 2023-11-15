@@ -17,6 +17,7 @@ const { title } = Astro.props
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="stylesheet" href="./base.css" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
@@ -29,17 +30,3 @@ const { title } = Astro.props
 		<Script />
 	</body>
 </html>
-<style is:global>
-	body::before {
-		position: absolute;
-		z-index: -1;
-		content: '';
-		top: 0%;
-		bottom: 10%;
-		width: 150%;
-		left: -25%;
-		background: linear-gradient(260deg, #3245ff 0%, #bc52ee 100%);
-		-webkit-mask-image: radial-gradient(rgba(0, 0, 0, 0.45), transparent 70%);
-		mask-image: radial-gradient(rgba(0, 0, 0, 0.45), transparent 70%);
-	}
-</style>
