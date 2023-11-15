@@ -48,7 +48,7 @@ export default function preloader() {
 		new Promise(resolve => {
 			// your animation here
 			gsap.to(element, {
-				yPercent: 0,
+				y: '-100%',
 				onComplete: () => {
 					document.dispatchEvent(new Event('removePreloader'))
 					resolve()
