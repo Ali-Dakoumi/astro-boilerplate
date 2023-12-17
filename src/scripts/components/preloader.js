@@ -2,12 +2,13 @@
 
 import gsap from 'gsap'
 import component from '../helpers/component'
+import { preloadImages } from '../utils/imagesLoaded'
 
 export default function preloader() {
 	const componentObject = component({
 		elm: '.preloader',
 		elms: {
-			number: '.preloader__number',
+			preloaderPercentage: '.preloader__number',
 			images: document.querySelectorAll('img'),
 		},
 	})
@@ -26,20 +27,13 @@ export default function preloader() {
 			return
 		}
 
-		elements.images.forEach(image => {
-			image.onload = () => {
-				onAssetLoaded(image)
-			}
-		})
-	}
-
-	const onAssetLoaded = async image => {
-		length += 1
-		const percent = length / elements.images.length
-		elements.number.innerHTML = `${Math.round(percent * 100)}%`
-		if (percent === 1) {
-			await onloaded()
-		}
+		preloadImages('img', elements.preloaderPercentage)
+			.then(async () => {
+				await onloaded()
+			})
+			.catch(error => {
+				console.error('Image loading failed:', error)
+			})
 	}
 
 	const onloaded = () =>
