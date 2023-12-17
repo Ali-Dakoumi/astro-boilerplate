@@ -1,5 +1,3 @@
-import { each } from 'lodash'
-
 import home from './pages/home'
 import about from './pages/about'
 import contact from './pages/contact'
@@ -60,7 +58,7 @@ const app = () => {
 	}
 
 	const addLinkListeners = async () => {
-		each(links, link => {
+		links.forEach(link => {
 			link.onclick = e => {
 				e.preventDefault()
 				const { href } = link

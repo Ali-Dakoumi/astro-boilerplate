@@ -3,8 +3,6 @@
 import gsap from 'gsap'
 import component from '../helpers/component'
 
-import { each } from 'lodash'
-
 export default function preloader() {
 	const componentObject = component({
 		elm: '.preloader',
@@ -28,7 +26,7 @@ export default function preloader() {
 			return
 		}
 
-		each(elements.images, image => {
+		elements.images.forEach(image => {
 			image.onload = () => {
 				onAssetLoaded(image)
 			}

@@ -1,6 +1,3 @@
-import { each } from 'lodash'
-import { gsap } from 'gsap'
-
 export default function component({ elm, elms }) {
 	let selector = elm
 	let selectorChildren = {
@@ -17,7 +14,7 @@ export default function component({ elm, elms }) {
 			element = document.querySelector(selector)
 		}
 
-		each(selectorChildren, (entry, key) => {
+		Object.entries(selectorChildren).forEach(([key, entry]) => {
 			if (entry instanceof HTMLElement || entry instanceof window.NodeList || Array.isArray(entry)) {
 				elements[key] = entry
 			} else {
