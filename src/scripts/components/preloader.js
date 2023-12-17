@@ -22,7 +22,7 @@ export default function preloader() {
 	const createPreloader = () => {
 		// your logic here before running animation
 		if (!elements.images.length) {
-			elements.number.innerHTML = `100%`
+			elements.preloaderPercentage.innerHTML = `100%`
 			onloaded()
 			return
 		}
