@@ -27,6 +27,15 @@ const app = () => {
 		pageElements = elements
 	}
 
+	const onPopState = async () => {
+		const { pathname } = window.location
+		await onChange(pathname)
+	}
+
+	const addPopStateListener = () => {
+		window.addEventListener('popstate', onPopState)
+	}
+
 	const onChange = async link => {
 		await initPage.hide({ pageElement, pageElements })
 
@@ -81,6 +90,7 @@ const app = () => {
 		initPage.createAnimations()
 	}
 
+	addPopStateListener()
 	createPrealoder()
 	createContent()
 	createPage()
